@@ -10,6 +10,7 @@ class Cache {
 
 		if (!self::$storage) {
 			self::$storage = new \Redis();
+			Log::debug(serialize(self::$storage));
 		}
 
 		return self::$storage;
