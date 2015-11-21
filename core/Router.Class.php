@@ -61,8 +61,6 @@ class Router {
         
     }
 
-    static function default
-
     static function init ($default_route_callback) {
 
         foreach (self::$routes as $route) {
