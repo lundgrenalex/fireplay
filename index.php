@@ -1,7 +1,16 @@
 <?php
 
-require_once __DIR__ . '/core/Router.Class.php';
+// Bootstrap
+define('ROOT', __DIR__);
+require_once ROOT . '/bootstrap/Autoloader.Class.php';
+Autoloader::init();
 
+// Save sessions to Redis Cache
+$sessHandler = new \Storage\Sessions();
+session_set_save_handler($sessHandler);
+session_start();
+
+// Routing section
 Router::get('/', function () {
 	echo 'Main Page';
 });
