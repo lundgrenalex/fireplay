@@ -64,16 +64,14 @@ class Router {
     static function init () {
 
         foreach (self::$routes as $route) {
-
-            // Path validation
             $export_vars = self::is_desired_path($route['path']);
-            if ($export_vars === false) {
-                continue;
-            }
-
+            if ($export_vars === false) continue;
             call_user_func_array($route['action'], $export_vars);
-
+            return true;
         }
+
+        throw new Exception('this route not registred :(');
+
     }
 
     private function __construct () {}
