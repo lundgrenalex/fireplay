@@ -57,7 +57,7 @@ class Router {
             return false;
         }
 
-        echo $method, json_encode($export_vars);    
+        print_r($export_vars);    
         
     }
 
