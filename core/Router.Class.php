@@ -25,9 +25,9 @@ class Router {
         }
 
         // Directives Validation
+        $export_vars = [];
+        
         foreach ($desired_path as $index => $directive) {
-            
-            $export_vars = [];
 
             if (preg_match('/{|}/i', $directive)) {
                 $directive = str_replace(['{','}'], '', $directive);
