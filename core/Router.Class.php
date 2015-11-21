@@ -6,7 +6,7 @@ class Router {
         'get', 'put', 'post', 'delete', 'head', 'options'
     ];
 
-    private static is_desired_path ($path) {
+    private static function is_desired_path ($path) {
 
         // Path type Validation
         if (!is_string($path)) {
