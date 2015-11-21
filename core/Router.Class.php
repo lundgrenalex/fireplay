@@ -2,12 +2,15 @@
 
 class Router {
 
+    // Register Request Types
     private static $methods = [
         'get', 'put', 'post', 'delete', 'head', 'options'
     ];
 
+    // Define Container for Routes
     private static $routes = [];
 
+    // Path Handler
     private static function is_desired_path ($path) {
 
         // Path type Validation
