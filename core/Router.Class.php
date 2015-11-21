@@ -68,7 +68,7 @@ class Router {
             // Path validation
             $export_vars = self::is_desired_path($route['path']);
             if ($export_vars === false) {
-                return false;
+                continue;
             }
 
             print_r($export_vars);
