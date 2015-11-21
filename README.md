@@ -27,6 +27,7 @@ Router::init(function () {
 });
 
 ```
+Example on http://router.endem.su/
 
 ## Use it for free and wellcome to Contribute
 For additional information please write ur email to alex@endem.su
