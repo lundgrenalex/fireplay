@@ -12,5 +12,6 @@ Router::get('/{id}', function ($id) {
 
 // Init Router
 Router::init(function () {
+	// Pass broken routes to root path 
 	header('Location: /');
 });
