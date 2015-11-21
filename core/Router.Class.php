@@ -16,7 +16,7 @@ class Router {
         }
 
         // Parse path
-        $incoming_path = explode('/', substr(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), 1));
+        $incoming_path = explode('/', substr(parse_url(@$_SERVER['REQUEST_URI'], PHP_URL_PATH), 1));
         $desired_path = explode('/', substr($path, 1));
 
         // Path Length Validation 
@@ -48,7 +48,7 @@ class Router {
     static function __callStatic ($method, $arguments) {
 
         // Request type validation
-        $method = strtolower($_SERVER['REQUEST_METHOD']);
+        $method = strtolower(@$_SERVER['REQUEST_METHOD']);
         if (array_search($method, self::$methods) === false) {
             return false;
         }
