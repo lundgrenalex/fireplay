@@ -2,15 +2,15 @@
 
 namespace Storage;
 
-class Cache extends \Redis {
+class Cache {
 
 	private static $storage;
 
 	static function init () {
 
 		if (!self::$storage) {
-			self::$storage = new self();
-			Log::debug(serialize(self::$storage));
+			self::$storage = new \Redis();
+			self::$storage->connect('127.0.0.1');
 		}
 
 		return self::$storage;
