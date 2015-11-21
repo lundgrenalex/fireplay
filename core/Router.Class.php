@@ -29,13 +29,13 @@ class Router {
             
             $export_vars = [];
 
+            print_r($export_vars);
+
             if (preg_match('/{|}/i', $directive)) {
                 $directive = str_replace(['{','}'], '', $directive);
                 $export_vars[$directive] = $incoming_path[$index];
                 continue;
             }
-
-            echo $directive, $incoming_path[$index], '<br>';
 
             if ($directive != $incoming_path[$index]) {
                 return false;
