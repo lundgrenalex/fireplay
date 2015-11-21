@@ -71,7 +71,7 @@ class Router {
                 continue;
             }
 
-            call_user_func_array($path['action'], $export_vars);
+            call_user_func_array($route['action'], $export_vars);
 
         }
     }
