@@ -9,8 +9,7 @@ class Cache {
 	static function init () {
 
 		if (!self::$storage) {
-			$cache = new \Redis();
-			self::$storage = $cache->connect('127.0.0.1');
+			self::$storage = new \Redis();
 		}
 
 		return self::$storage;

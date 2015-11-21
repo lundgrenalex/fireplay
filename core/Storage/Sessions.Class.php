@@ -13,7 +13,8 @@ class Sessions implements \SessionHandlerInterface {
     protected $prefix = 'PHPSESSID:';
 
     public function __construct() {
-        $this->db = Cache::init();
+        $cache = Cache::init();
+        $this->db = $cache->connect('127.0.0.1');
     }
 
     public function open($savePath, $sessionName) {
