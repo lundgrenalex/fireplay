@@ -30,8 +30,7 @@ class Router {
         foreach ($desired_path as $index => $directive) {
 
             if (preg_match('/{|}/i', $directive)) {
-                $directive = str_replace(['{','}'], '', $directive);
-                $export_vars[$directive] = $incoming_path[$index];
+                $export_vars[] = $incoming_path[$index];
                 continue;
             }
 
@@ -73,7 +72,7 @@ class Router {
             }
 
             call_user_func_array($path['action'], $export_vars);
-                      
+
         }
     }
 
