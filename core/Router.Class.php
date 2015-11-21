@@ -35,11 +35,13 @@ class Router {
                 continue;
             }
 
+            echo $directive, $incoming_path[$index], '<br>';
+
             if ($directive != $incoming_path[$index]) {
                 return false;
             }
 
-            echo $directive, $incoming_path[$index], '<br>';
+
 
         }
 
