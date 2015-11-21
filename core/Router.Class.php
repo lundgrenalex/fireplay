@@ -27,7 +27,7 @@ class Router {
             
             $export_vars = [];
 
-            if (!preg_match('/{|}/i', $directive)) {
+            if (preg_match('/{|}/i', $directive)) {
                 $directive = str_replace(['{','}'], '', $directive);
                 $export_vars[$directive] = $incoming_path[$index];
                 continue;
