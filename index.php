@@ -11,7 +11,7 @@ Router::get('/{id}', function ($id) {
 });
 
 Router::get('/user/{id}/medias/{type}', function ($id, $type) {
-	echo $id, $type;
+	echo $id, ' ', $type;
 });
 
 // Init Router
