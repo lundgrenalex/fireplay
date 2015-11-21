@@ -73,8 +73,7 @@ class Router {
             }
 
             call_user_func_array($path['action'], $export_vars);
-            return true;
-            
+                      
         }
     }
 
