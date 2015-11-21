@@ -76,5 +76,8 @@ class Router {
         }
     }
 
+    private function __construct () {}
+    private function __clone () {} 
+
 }
 
