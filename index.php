@@ -10,6 +10,10 @@ Router::get('/{id}', function ($id) {
 	echo $id;
 });
 
+Router::get('/user/{id}/medias/{type}', function ($id, $type) {
+	echo $id, $type;
+});
+
 // Init Router
 Router::init(function () {
 	// Pass broken routes to root path 
