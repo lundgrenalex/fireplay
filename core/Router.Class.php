@@ -26,7 +26,7 @@ class Router {
 
         // Directives Validation
         $export_vars = [];
-        
+
         foreach ($desired_path as $index => $directive) {
 
             if (preg_match('/{|}/i', $directive)) {
@@ -63,8 +63,6 @@ class Router {
     }
 
     static function init () {
-
-        print_r(self::$routes);
 
         foreach (self::$routes as $route) {
 
