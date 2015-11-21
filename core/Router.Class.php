@@ -6,6 +6,8 @@ class Router {
         'get', 'put', 'post', 'delete', 'head', 'options'
     ];
 
+    private static $routes = [];
+
     private static function is_desired_path ($path) {
 
         // Path type Validation
@@ -44,21 +46,34 @@ class Router {
     }
 
     static function __callStatic ($method, $arguments) {
-    
+
         // Request type validation
         $method = strtolower($_SERVER['REQUEST_METHOD']);
         if (array_search($method, self::$methods) === false) {
             return false;
         }
 
-        // Path validation
-        $export_vars = self::is_desired_path($arguments['0']);
-        if ($export_vars === false) {
-            return false;
-        }
+        self::$routes[] = [
+            'method' => $method,
+            'path' => $arguments['0'],
+            'action' => $arguments['1']
+        ];
 
-        print_r($export_vars);    
         
+    }
+
+    static function init () {
+        foreach (self::$routes as $route) {
+
+            // Path validation
+            $export_vars = self::is_desired_path($route['path']);
+            if ($export_vars === false) {
+                return false;
+            }
+
+            print_r($export_vars);
+
+        }
     }
 
 }
