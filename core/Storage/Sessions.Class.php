@@ -2,7 +2,7 @@
 
 namespace Storage;
 
-use Cache;
+use \Storage\Cache;
 
 class Sessions implements \SessionHandlerInterface {
 		
