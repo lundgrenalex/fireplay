@@ -72,6 +72,7 @@ class Router {
             }
 
             print_r($export_vars);
+            return true;
 
         }
     }
