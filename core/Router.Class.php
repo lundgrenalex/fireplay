@@ -61,7 +61,9 @@ class Router {
         
     }
 
-    static function init () {
+    static function default
+
+    static function init ($default_route_callback) {
 
         foreach (self::$routes as $route) {
             $export_vars = self::is_desired_path($route['path']);
@@ -70,7 +72,12 @@ class Router {
             return true;
         }
 
-        throw new Exception('This route not registred :(');
+        if (is_callable($default_route_callback)) {
+            return call_user_func($default_route_callback);
+        }
+
+        header("HTTP/1.0 404 Not Found");
+        echo 'Route not found';
 
     }
 
