@@ -1,5 +1,5 @@
 # phprouter
-Simple PHP Router
+Simple PHP Router in 88 strings of code
 
 ## How use:
 ```php
@@ -27,3 +27,6 @@ Router::init(function () {
 });
 
 ```
+
+## Use it for free and wellcome to Contribute
+For additional information please write ur email to alex@endem.su
