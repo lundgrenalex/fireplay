@@ -4,10 +4,6 @@ Simple PHP Router in 88 strings of code
 ## How use:
 ```php
 
-<?php
-
-require_once __DIR__ . '/core/Router.Class.php';
-
 Router::get('/', function () {
 	echo 'Main Page';
 });
