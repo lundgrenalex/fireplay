@@ -29,8 +29,6 @@ class Router {
             
             $export_vars = [];
 
-            print_r($export_vars);
-
             if (preg_match('/{|}/i', $directive)) {
                 $directive = str_replace(['{','}'], '', $directive);
                 $export_vars[$directive] = $incoming_path[$index];
@@ -40,8 +38,6 @@ class Router {
             if ($directive != $incoming_path[$index]) {
                 return false;
             }
-
-
 
         }
 
@@ -67,6 +63,9 @@ class Router {
     }
 
     static function init () {
+
+        print_r(self::$routes);
+
         foreach (self::$routes as $route) {
 
             // Path validation
