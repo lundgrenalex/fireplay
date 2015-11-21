@@ -39,6 +39,8 @@ class Router {
                 return false;
             }
 
+            echo $directive, $incoming_path[$index], '<br>';
+
         }
 
         return $export_vars;
