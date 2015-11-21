@@ -70,7 +70,7 @@ class Router {
             return true;
         }
 
-        throw new Exception('this route not registred :(');
+        throw new Exception('This route not registred :(');
 
     }
 
