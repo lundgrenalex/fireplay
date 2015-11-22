@@ -21,7 +21,7 @@ class Pages {
 			// Load document from Storage
 			$document = file_get_contents(ROOT.'/resources/pages/'.$name.'.md');
 			// and push it to Cache with expire date & set expire
-			Cache::init()->set('Pages::'.$name);
+			Cache::init()->set('Pages::'.$name, $document);
 			Cache::init()->expireAt('Pages::'.$name, time() + $ttl);
 		}
 
