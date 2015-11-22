@@ -14,11 +14,10 @@ session_set_save_handler($sessHandler);
 session_start();
 
 // Routing section
-Router::get('/', function () {
-	\Storage\Log::info('Someone user came to root path');
-	echo \Models\Pages::get('wellcome', 60*60*2);
-});
+// As Controller
+Router::get('/', '\Controllers\Homepage::init');
 
+// As callback Function
 Router::get('/{id}', function ($id) {
 	\Storage\Log::info('Someone user came to '.$id.' path');
 	echo $id;
