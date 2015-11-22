@@ -16,7 +16,7 @@ session_start();
 // Routing section
 Router::get('/', function () {
 	\Storage\Log::info('Someone user came to root path');
-	echo 'Main Page';
+	\Models\Pages::get('wellcome', 60*60*2);
 });
 
 Router::get('/{id}', function ($id) {
