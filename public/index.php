@@ -18,17 +18,11 @@ session_start();
 Router::get('/', '\Controllers\Homepage::init');
 
 // As callback Function
-Router::get('/{id}', function ($id) {
-	\Storage\Log::info('Someone user came to '.$id.' path');
-	echo $id;
+Router::post('/{id}', function ($id) {
+	return Response::json(['userid' => $id]);
 });
 
-Router::get('/user/{id}/medias/{type}', function ($id, $type) {
-	\Storage\Log::info('Someone user came to user path with id '.$id.' and type '.$type);
-	echo $id, ' ', $type;
-});
-
-// Init Router
+// Set default route & init Router
 Router::init(function () {
 	// Pass broken routes to root path 
 	\Storage\Log::error('Route not found');
