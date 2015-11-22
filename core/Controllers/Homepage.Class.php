@@ -4,10 +4,9 @@ namespace Controllers;
 
 use \Storage\Log as Log;
 use \Storage\Pages as Pages;
+use \Views;
 
 class Homepage {
-		
-	use \Views;
 
 	static function init () {
 		$document = \Models\Pages::get('wellcome', 60*60*2);
