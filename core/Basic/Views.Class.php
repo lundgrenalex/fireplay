@@ -14,7 +14,7 @@ class Views {
 		}
 
 		extract($exports);
-
+		
 		include_once $dst;
 
 	}
