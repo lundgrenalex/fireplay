@@ -11,11 +11,11 @@ class Homepage {
 	static function init () {
 		
 		$exports = [
-			'document' => \Models\Pages::get('wellcome', 60*60*2);
+			'document' => \Models\Pages::get('wellcome', 60*60*2)
 		];
 
 		Views::get('homepage', $exports);
-		
+
 	}
 
 }
