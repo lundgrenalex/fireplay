@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Standard views loader with export varibles
+ * @author 	Alex Lundgren
+ * @copyright Copyright (c) 2005-2015 Alex Lundgren
+ * @license http://www.gnu.org/licenses/gpl-3.0.en.html GPL v3
+ */
+
 use \Storage\Log as Log;
 
 class Views {
@@ -14,7 +21,7 @@ class Views {
 		}
 
 		extract($exports);
-		
+
 		include_once $dst;
 
 	}
