@@ -1,12 +1,6 @@
 <?php Views::get('assets.header'); ?>
 
-<header>
-	<nav>
-		<a href="#homepage">Homepage</a>
-	</nav>
-</header>
-
-<section>
+<section class="">
 	<div class="container">
 		<div class="content">
 			<div class="row">
