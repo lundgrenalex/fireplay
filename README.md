@@ -1,8 +1,11 @@
 # Simple, modern and lightweight PHP framework
 Simple and modern php framwork based on fast routing, phpredis caching, mongodb storage and markdown layout
 
-## Addition
-please install and enable:
+## Additions
+### require
+* your php version <= php5.9
+
+### please install and enable:
 * phpredis
 * php mongodb support
 
