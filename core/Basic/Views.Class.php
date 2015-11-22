@@ -4,7 +4,7 @@ use \Storage\Log as Log;
 
 class Views {
 	
-	static function get ($name, $exports) {
+	static function get ($name, array $exports = []) {
 
 		$dst = ROOT . '/resources/views/' . str_replace('.', '/', $name) . '.php';
 		if (!file_exists($dst)) {
