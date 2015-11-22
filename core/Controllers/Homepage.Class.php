@@ -7,6 +7,8 @@ use \Storage\Pages as Pages;
 
 class Homepage {
 		
+	use \Views;
+
 	static function init () {
 		$document = \Models\Pages::get('wellcome', 60*60*2);
 		Views::get('homepage');
