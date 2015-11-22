@@ -1,4 +1,4 @@
-# Fireplay is simple, moder and lightweight PHP framework
+# Simple, moder and lightweight PHP framework
 Simple and modern php framwork based on fast routing, phpredis caching, mongodb storage and markdown layout
 
 ## How use:
