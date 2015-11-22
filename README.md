@@ -1,25 +1,43 @@
-# phprouter
-Simple PHP Router in 88 strings of code
+# Fireplay is simple, moder and lightweight PHP framework
+Simple and modern php framwork based on fast routing, phpredis caching, mongodb storage and markdown layout
 
 ## How use:
 ```php
 
+// Bootstrap
+define('ROOT', __DIR__.'/../');
+require_once ROOT . '/bootstrap/Autoloader.Class.php';
+Autoloader::init();
+
+// Init Logging
+\Storage\Log::$dst = ROOT . '/logs/application.log';
+
+// Save sessions to Redis Cache
+$sessHandler = new \Storage\Sessions();
+session_set_save_handler($sessHandler);
+session_start();
+
+// Routing section
 Router::get('/', function () {
-	echo 'Main Page';
+    \Storage\Log::info('Someone user came to root path');
+    echo \Models\Pages::get('wellcome', 60*60*2);
 });
 
 Router::get('/{id}', function ($id) {
-	echo $id;
+    \Storage\Log::info('Someone user came to '.$id.' path');
+    echo $id;
 });
 
 Router::get('/user/{id}/medias/{type}', function ($id, $type) {
-	echo $id, ' ', $type;
+    \Storage\Log::info('Someone user came to user path with id '.$id.' and type '.$type);
+    echo $id, ' ', $type;
 });
 
 // Init Router
 Router::init(function () {
-	// Pass broken routes to root path 
-	header('Location: /');
+    // Pass broken routes to root path 
+    \Storage\Log::error('Route not found');
+    header('Location: /');
 });
 
 ```
