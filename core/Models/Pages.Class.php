@@ -12,7 +12,7 @@ class Pages {
 
 		// Init Mardown Parser
 		if (!self::$parser) {
-			self::$parser = new Markdown();
+			self::$parser = new \Markdown();
 		}
 
 		// Get document from Cache
