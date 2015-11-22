@@ -13,7 +13,7 @@ class Views {
 			throw new \Exception($message, 1);
 		}
 
-		var_export($exports, true);
+		var_export($exports);
 
 		include_once $dst;
 
