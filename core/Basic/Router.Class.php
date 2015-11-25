@@ -56,12 +56,6 @@ class Router {
 
     static function __callStatic ($method, $arguments) {
 
-        // Request type validation
-        $method = strtolower(@$_SERVER['REQUEST_METHOD']);
-        if (array_search($method, self::$methods) === false) {
-            return false;
-        }
-
         self::$routes[] = [
             'method' => $method,
             'path' => $arguments['0'],
@@ -74,10 +68,19 @@ class Router {
     static function init ($default_route_callback) {
 
         foreach (self::$routes as $route) {
+
+            if ($route['method'] !== strtolower(@$_SERVER['REQUEST_METHOD'])) {
+                continue;
+            }
+
             $export_vars = self::is_desired_path($route['path']);
-            if ($export_vars === false) continue;
+            if ($export_vars === false) {
+                continue;
+            }
+
             call_user_func_array($route['action'], $export_vars);
             return true;
+
         }
 
         if (is_callable($default_route_callback)) {
@@ -91,6 +94,6 @@ class Router {
 
     private function __construct () {}
     private function __clone () {} 
+    private function __wakeup () {}
 
 }
-
