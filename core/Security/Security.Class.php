@@ -9,15 +9,15 @@
 
 use \Storage\Cache as Cache;
 
-class Security () {
+class Security {
 	
-	private static $characters = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
+	private static $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 	static function token () {
 
 		if (!isset($_SESSION['security']['token'])) {
 			$string = str_shuffle(self::$characters);
-			$_SESSION['security']['token'] = crypt($string, CRYPT_SHA512);
+			$_SESSION['security']['token'] = sha1($string);
 		}
 
 		return $_SESSION['security']['token'];
