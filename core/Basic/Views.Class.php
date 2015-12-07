@@ -18,7 +18,7 @@ class Views {
 		
 		$template_name = $dst;
 		$cache_name = 'teplates::'.$template_name;
-		$dst = ROOT.'resources/views/'.str_replace('.','/',$dst).'.php';
+		$dst = ROOT.'/resources/views/'.str_replace('.','/',$dst).'.php';
 
 		if (!file_exists($dst)) {
 			Log::error('Template '.$dst.' not found');
