@@ -3,7 +3,7 @@ Simple and modern php framwork based on fast routing, phpredis caching, mongodb 
 
 ## Additions
 ### require
-* your php version <= php5.9
+* your php version >= php5.9
 
 ### please install and enable:
 * phpredis
