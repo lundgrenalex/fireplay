@@ -6,7 +6,7 @@ class Autoloader {
 		spl_autoload_register('Autoloader::load');
 	}
 
-	static function load () {
+	private static function load () {
 
         $paths = [
             glob(ROOT . '/core/*/*.Class.php')
